@@ -59,7 +59,7 @@ class Base
 	 * Returns a random number between $from and $to
 	 *
 	 * @param integer $from
-	 * @param integer $too
+	 * @param integer $to
 	 * @example 79907610
 	 *
 	 * @return integer
@@ -134,7 +134,7 @@ class Base
 	 * @return string
 	 */
 	public static function toLower($string) {
-		return extension_loaded('mbstring') ? mb_strtolower($string) : strtolower($string);
+		return extension_loaded('mbstring') ? mb_strtolower($string, 'UTF-8') : strtolower($string);
 	}
 
 	/**
@@ -144,6 +144,6 @@ class Base
 	 * @return string
 	 */
 	public static function toUpper($string) {
-		return extension_loaded('mbstring') ? mb_strtoupper($string) : strtoupper($string);
+		return extension_loaded('mbstring') ? mb_strtoupper($string, 'UTF-8') : strtoupper($string);
 	}
 }
